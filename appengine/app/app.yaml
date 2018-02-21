@@ -4,11 +4,8 @@ api_version: go1.8
 env_variables:
 
 nobuild_files:
-- lib/vendor
 
 skip_files:
-- lib/vendor/.*$
-- .*\.DS_Store$
 
 service: default
 
