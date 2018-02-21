@@ -1,5 +1,6 @@
 appengine/var/*
-appengine/vendor
+!appengine/var/.gitkeep
+appengine/vendor/*
 !appengine/vendor/lib
 
 # macOS
