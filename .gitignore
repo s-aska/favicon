@@ -1,15 +1,5 @@
-**/gopath/bin/
-**/gopath/pkg/
-**/gopath/src/*
-!**/gopath/src/lib
-**/gopath/src/lib/vendor
-devtools/vendor
+var
+appengine/gopath
+
+# macOS
 .DS_Store
-node_modules/
-npm-debug.log
-yarn-error.log
-*-update.js
-*-update.json
-build.js
-secret
-.datastore

@@ -8,7 +8,6 @@
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 gcloud init
-
 ```
 
 ## Installing App Engine extension for Go

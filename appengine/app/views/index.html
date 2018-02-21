@@ -19,7 +19,11 @@
       </div>
       <div class="form-group">
         <input type="file" class="form-file-input" id="152" name="152">
-        <small class="form-text text-muted">152x152 png file ( for Home Launcher )</small>
+        <small class="form-text text-muted">152x152 png file ( for iOS )</small>
+      </div>
+      <div class="form-group">
+        <input type="file" class="form-file-input" id="192" name="192">
+        <small class="form-text text-muted">192x192 png file ( for Android Chrome )</small>
       </div>
       <button type="submit" class="btn btn-primary">Generate</button>
     </form>
@@ -34,8 +38,8 @@
     <form action="auto" method="post" enctype="multipart/form-data">
       {{ .csrfField }}
       <div class="form-group">
-        <input type="file" class="form-file-input" id="152" name="152">
-        <small class="form-text text-muted">152x152 png file</small>
+        <input type="file" class="form-file-input" id="192" name="192">
+        <small class="form-text text-muted">192x192 png file</small>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="algorithm" id="Mitchell-Netravali" value="Mitchell-Netravali" checked>
