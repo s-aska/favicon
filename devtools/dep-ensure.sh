@@ -6,7 +6,7 @@ if [ -e vendor/lib ]; then
   rm vendor/lib
 fi
 
-dep ensure
+dep ensure $*
 
 if [ ! -e vendor/lib ]; then
   ln -s ../src/lib vendor/lib
