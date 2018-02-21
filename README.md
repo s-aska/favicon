@@ -40,6 +40,7 @@ dev_appserver.py app/app.yaml
 ```
 cd appengine/
 gcloud app deploy --project tmsb-favicon --version 1 app/app.yaml
+GOPATH=`pwd`/gopath gcloud app deploy
 ```
 
 ## Local Unit Testing for Go

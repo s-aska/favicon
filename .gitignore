@@ -1,5 +1,5 @@
-var
-appengine/gopath
+appengine/var
+appengine/vendor
 
 # macOS
 .DS_Store
