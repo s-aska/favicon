@@ -16,31 +16,30 @@ gcloud init
 gcloud components install app-engine-go
 ```
 
-## Installing direnv
+## Clone
 
-https://github.com/direnv/direnv
+```
+mkdir $GOPATH/github.com/tmsbjp
+cd $GOPATH/github.com/tmsbjp
+git clone git@github.com:tmsbjp/favicon.git
+```
 
 ## Installing dependency
 
 ```
-cd appengine/gopath/src/lib
-go get ./...
-cd -
+make install
 ```
 
 ## Running the local development server
 
 ```
-cd appengine/
-dev_appserver.py app/app.yaml
+make serve
 ```
 
 ## Deploying a Go App
 
 ```
-cd appengine/
-gcloud app deploy --project tmsb-favicon --version 1 app/app.yaml
-GOPATH=`pwd`/gopath gcloud app deploy
+make deploy
 ```
 
 ## Local Unit Testing for Go

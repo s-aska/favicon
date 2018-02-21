@@ -1,5 +1,6 @@
-appengine/var
+appengine/var/*
 appengine/vendor
+!appengine/vendor/lib
 
 # macOS
 .DS_Store
