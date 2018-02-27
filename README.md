@@ -19,8 +19,8 @@ gcloud components install app-engine-go
 ## Clone
 
 ```
-mkdir $GOPATH/github.com/tmsbjp
-cd $GOPATH/github.com/tmsbjp
+mkdir $GOPATH/src/github.com/tmsbjp
+cd $GOPATH/src/github.com/tmsbjp
 git clone git@github.com:tmsbjp/favicon.git
 ```
 
