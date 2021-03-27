@@ -1,47 +1,63 @@
-# Tomoshibi favicon generator
+# fms
 
-## Installing Cloud SDK
+## Setup
 
-[Installing Cloud SDK](https://cloud.google.com/sdk/downloads#interactive)
-
-```
-curl https://sdk.cloud.google.com | bash
-exec -l $SHELL
-gcloud init
-```
-
-## Installing App Engine extension for Go
-
-```
-gcloud components install app-engine-go
-```
-
-## Clone
-
-```
-mkdir $GOPATH/src/github.com/tmsbjp
+```sh
+mkdir -p $GOPATH/src/github.com/tmsbjp
 cd $GOPATH/src/github.com/tmsbjp
 git clone git@github.com:tmsbjp/favicon.git
 ```
 
-## Installing dependency
+## Install
 
+### Installing Go
+
+```sh
+brew install go
 ```
-make install
+
+### Installing SDK and GAE/Go Components
+
+[Installing Cloud SDK](https://cloud.google.com/sdk/downloads#interactive)
+
+```sh
+curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+gcloud init
+gcloud components install app-engine-go
+```
+
+### Installing dependency
+
+```sh
+make installdeps
 ```
 
 ## Running the local development server
 
-```
-make serve
-```
-
-## Deploying a Go App
-
-```
-make deploy
+```sh
+make dev-all
 ```
 
-## Local Unit Testing for Go
+## Deployment command
 
-https://cloud.google.com/appengine/docs/standard/go/tools/localunittesting/
+```sh
+make deploy-all
+```
+
+## Deployment App Engine
+
+git push origin master -> Cloud Build -> https://YOUR_PROJECT_ID.appspot.com/
+
+### How to Setup
+
+See https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories
+
+1. `[PROJECT_NUMBER]@cloudbuild.gserviceaccount.com` Add `App Engine Admin` role [IAM](https://console.cloud.google.com/iam-admin/iam?project=YOUR_PROJECT_ID)
+2. Enable the `Google App Engine Admin API` [App Engine Admin API](https://console.cloud.google.com/apis/api/appengine.googleapis.com/overview?project=YOUR_PROJECT_ID)
+3. Add Trigger [Cloud Build](https://console.cloud.google.com/cloud-build/triggers?project=YOUR_PROJECT_ID)
+   1. Select Source GitHub
+   2. Choose Repository
+   3. Click `Cloud Build 構成ファイル（yaml または json）`
+   4. Settings Branches or Tags rule
+   5. Create
