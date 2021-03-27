@@ -9,7 +9,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/log"
 	"github.com/nfnt/resize"
-	"github.com/tmsbjp/favicon/contrlib/ico"
+	"github.com/s-aska/favicon/contrlib/ico"
 )
 
 // Root /

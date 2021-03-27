@@ -7,7 +7,7 @@ import (
 
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/log"
-	"github.com/tmsbjp/favicon/webapp/web/appengine"
+	"github.com/s-aska/favicon/webapp/web/appengine"
 	stackdriverlog "github.com/yfuruyama/stackdriver-request-context-log"
 )
 

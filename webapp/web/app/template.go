@@ -7,8 +7,8 @@ import (
 
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/log"
-	"github.com/tmsbjp/favicon/webapp/web/appengine"
-	"github.com/tmsbjp/favicon/webapp/web/functions"
+	"github.com/s-aska/favicon/webapp/web/appengine"
+	"github.com/s-aska/favicon/webapp/web/functions"
 )
 
 func scheme() string {

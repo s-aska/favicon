@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/labstack/echo"
-	"github.com/tmsbjp/favicon/webapp/web/app/controllers/top"
+	"github.com/s-aska/favicon/webapp/web/app/controllers/top"
 )
 
 func registerRoutes(e *echo.Echo) {

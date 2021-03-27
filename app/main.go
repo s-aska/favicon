@@ -1,6 +1,6 @@
 package main
 
-import "github.com/tmsbjp/favicon/webapp/web/app"
+import "github.com/s-aska/favicon/webapp/web/app"
 
 func main() {
 	app.Bootstrap()

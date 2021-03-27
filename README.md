@@ -3,9 +3,9 @@
 ## Setup
 
 ```sh
-mkdir -p $GOPATH/src/github.com/tmsbjp
-cd $GOPATH/src/github.com/tmsbjp
-git clone git@github.com:tmsbjp/favicon.git
+mkdir -p $GOPATH/src/github.com/s-aska
+cd $GOPATH/src/github.com/s-aska
+git clone git@github.com:s-aska/favicon.git
 ```
 
 ## Install

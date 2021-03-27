@@ -1,4 +1,4 @@
-module github.com/tmsbjp/favicon
+module github.com/s-aska/favicon
 
 go 1.12
 
