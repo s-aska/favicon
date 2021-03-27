@@ -20,22 +20,20 @@ func Root(c echo.Context) error {
 }
 
 // Auto 自動生成
-func Auto(c echo.Context) {
+func Auto(c echo.Context) error {
 	r := c.Request()
 	w := c.Response()
 
 	imgs := []image.Image{}
 	sizes := []uint{48, 32, 16}
-	file, _, err := r.FormFile("152")
+	file, _, err := r.FormFile("192")
 	if err != nil {
-		c.Error(err)
-		return
+		return err
 	}
 	defer file.Close()
 	img, err := png.Decode(file)
 	if err != nil {
-		c.Error(err)
-		return
+		return err
 	}
 	imgs = append(imgs, img)
 
@@ -65,11 +63,11 @@ func Auto(c echo.Context) {
 
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Header().Set("Content-Disposition", "attachment; filename=favicon.ico")
-	ico.Encode(w, imgs...)
+	return ico.Encode(w, imgs...)
 }
 
 // Manual 各サイズ指定
-func Manual(c echo.Context) {
+func Manual(c echo.Context) error {
 	r := c.Request()
 	w := c.Response()
 
@@ -79,19 +77,17 @@ func Manual(c echo.Context) {
 	for _, size := range sizes {
 		file, _, err := r.FormFile(strconv.Itoa(size))
 		if err != nil {
-			c.Error(err)
-			return
+			return err
 		}
 		defer file.Close()
 		image, err := png.Decode(file)
 		if err != nil {
-			c.Error(err)
-			return
+			return err
 		}
 		images = append(images, image)
 	}
 
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Header().Set("Content-Disposition", "attachment; filename=favicon.ico")
-	ico.Encode(w, images...)
+	return ico.Encode(w, images...)
 }

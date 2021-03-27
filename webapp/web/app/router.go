@@ -7,4 +7,6 @@ import (
 
 func registerRoutes(e *echo.Echo) {
 	e.GET("/", top.Root)
+	e.POST("/manual", top.Manual)
+	e.POST("/auto", top.Auto)
 }

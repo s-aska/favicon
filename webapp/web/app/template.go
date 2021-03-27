@@ -3,6 +3,7 @@ package app
 import (
 	"html/template"
 	"io"
+	"os"
 	"path"
 
 	"github.com/labstack/echo"
@@ -54,7 +55,11 @@ func (r *Renderer) Render(w io.Writer, name string, data interface{}, c echo.Con
 }
 
 func registerTemplates(e *echo.Echo) {
-	views := "views/"
+	sv := os.Getenv("GAE_SERVICE")
+	if sv == "default" {
+		sv = "app"
+	}
+	views := sv + "/views/"
 	r := &Renderer{
 		dir: views,
 	}

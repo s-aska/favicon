@@ -36,13 +36,13 @@ make installdeps
 ## Running the local development server
 
 ```sh
-make dev-all
+make dev-app
 ```
 
 ## Deployment command
 
 ```sh
-make deploy-all
+make deploy-app
 ```
 
 ## Deployment App Engine

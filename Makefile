@@ -8,13 +8,10 @@ create: ## GCPプロジェクト作成
 installdeps: ## go mod vendor
 	go mod vendor
 
-dev-all: ## dev_appserver.py
-	cd app; go run main.go
+dev-app: ## go run app/main.go
+	GAE_SERVICE=default go run app/main.go
 
 deploy-app: ## gcloud app deploy
-	gcloud app deploy --project $(PROJECT_NAME) app.yaml
-
-deploy-all: ## gcloud app deploy
 	gcloud app deploy --project $(PROJECT_NAME) app.yaml
 
 help:

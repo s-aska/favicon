@@ -42,14 +42,17 @@ func Bootstrap() {
 		log.Infof("Defaulting to port %s", port)
 	}
 	log.Infof("Listening on port %s", port)
+	for _, e := range os.Environ() {
+		log.Infof("%s", e)
+	}
 
 	handler := stackdriverlog.RequestLogging(config)(e)
 
 	http.Handle("/", handler)
 
 	if appengine.IsDevAppServer() {
-		e.Static("/static", "static")
-		e.Static("/favicon.ico", "static/favicon.ico")
+		e.Static("/static", "app/static")
+		e.Static("/favicon.ico", "app/static/favicon.ico")
 	}
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), handler))

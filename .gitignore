@@ -1,7 +1,4 @@
-appengine/var/*
-!appengine/var/.gitkeep
-appengine/vendor/*
-!appengine/vendor/lib
+vendor
 
 # macOS
 .DS_Store

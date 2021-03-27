@@ -1,10 +1,6 @@
-runtime: go111
+runtime: go115
 
 main: app
-
-env_variables:
-  VIEWS: "app/views/"
-  SESSION_COOKIE_NAME: "APSID"
 
 service: default
 
